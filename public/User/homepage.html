@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+	<link rel="icon" type="image/png" href="../assets/img/favicon.png">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>Sign Up Page - Material Kit by Creative Tim</title>
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+
+	<!--     Fonts and icons     -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- CSS Files -->
+	
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../assets/css/material-kit.css" rel="stylesheet"/>
+	<script src="../assets/js/jquery.min.js"> </script>
+<style>
+
+.content {
+    position: absolute;
+    bottom: 0;
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+}
+
+	
+			
+	
+</style>
+<script> 
+$(function(){
+  $("#headerclass").load("header.html"); 
+  $("#footerclass").load("footer.html");
+});
+</script>  
+<script type="text/javascript">
+	$(document).ready(function(){
+	$("#test2").keyup(function() {
+	    var val = $("#test2").val();
+	    if (parseInt(val) < 0 || isNaN(val)) {
+	        alert("Please Enter Only Numeric Values in Volunteer Id");
+	        $("#test2").val("");
+	        $("#test2").focus();
+	    }
+		});
+	});
+</script>
+<body class="home-page" style="background:white;">
+	<div id="headerclass">
+				
+	</div>
+		<!--header finished-->
+		
+		
+		<!--body of content start-->
+		
+		<div class="wrapper">
+				<div class="container">
+					<!--Slider start-->
+					<div class="row" style="margin-top:100px;">
+						 <div class="card card-raised card-carousel">
+							<div id="myCarousel" class="carousel slide" data-ride="carousel">
+								<ol class="carousel-indicators">
+								  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+								  <li data-target="#myCarousel" data-slide-to="1"></li>
+								  <li data-target="#myCarousel" data-slide-to="2"></li>
+								</ol>
+								<div class="carousel-inner">
+								  <div class="item active">
+									<img src="../assets/img/events/childrenday.jpg" alt="Children Days" style="width:100%;height:400px">
+								  </div>
+
+								  <div class="item">
+									<img src="../assets/img/events/tec.jpg" alt="Painting" style="width:100%;height:400px">
+								  </div>
+								
+								  <div class="item">
+									<img src="../assets/img/events/teach.jpg" alt="Teaching" style="width:100%;height:400px">
+								  </div>
+								</div>
+
+								<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+								  <span class="glyphicon glyphicon-chevron-left"></span>
+								  <span class="sr-only">Previous</span>
+								</a>
+								<a class="right carousel-control" href="#myCarousel" data-slide="next">
+								  <span class="glyphicon glyphicon-chevron-right"></span>
+								  <span class="sr-only">Next</span>
+								</a>
+							</div>
+						 </div>
+					</div>
+					<!--slider finished-->
+					
+				</div>	
+				<div class="section">
+						<div class="container-fluid text-center">
+							<div class="row">					
+								<div class="col-md-12" style="height:40%;width:85%;margin-left:98px;background:lightgrey;">
+
+									<h2 style="float:left;margin-left:80px;"><strong>Become a Volunteer</strong></h2>
+									<a href="#"><button class="btn btn-primary" value="Register" data-toggle="modal"  style="float:right;margin-right:70px;border-radius:10px;margin-top:25px;">Register</button></a>
+									<h2 style="float:left;margin-left:80px;"><strong>Become a Volunteer</strong></h4><br><br>
+								</div>
+							</div>
+							<div class="row" style="margin-top:50px;">
+								<div class="col-md-12">
+									<div class="col-md-4">
+										<a href="../NGO/viewVolunteer.html">
+											<font style="color:grey; bgcolor:black;margin-left:200px;"><i class="material-icons" style="font-size:230px;">directions_walk</i></font>
+											<br><label style="margin-left:200px;"> <strong>Select Volunteer</strong></label>
+										</a>
+									</div>
+									<div class="col-md-4">
+										<a href="../donation.html">
+											<font style="color:grey; bgcolor:black;" ><i class="material-icons" style="font-size:230px;">account_balance_wallet</i></font>
+											<br><label style="margin-top:20px;"> <strong>Donate Instantly<strong></strong></label>
+										</a>										
+									</div>
+									<div class="col-md-4">
+										<a href="../User/events.html">
+											<font style="color:grey; bgcolor:black;margin-right:200px;" ><i class="material-icons" style="font-size:230px;">event</i></font>
+											<br><label style="margin-right:200px;"> <strong>Browse Event</strong></label>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="row" style="margin-top:40px;">
+								<div class="col-md-12"  style="height:40%;width:85%;margin-left:98px;background:lightgrey;">
+									<h2 style="float:left;margin-left:80px;"><strong>Are you a NGO? Find the Volunteer today</strong></h2>
+									<a href="#"><button class="btn btn-primary" value="Register" data-toggle="modal"  style="float:right;margin-right:70px;border-radius:10px;margin-top:25px;">NGO Register</button></a>
+								</div>
+							</div>
+							
+						</div>
+				</div>
+			</div>
+		
+	<!--body content finished-->
+	
+	<div id="footerclass">
+	
+	</div>
+	<!--footer-->
+	
+	<!--footer finished-->
+</body>
+</html>

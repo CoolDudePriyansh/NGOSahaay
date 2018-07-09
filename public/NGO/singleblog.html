@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png" />
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>View Blog</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <!-- Bootstrap core CSS     -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <!--  Material Dashboard CSS    -->
+    <link href="../assets/css/material-dashboard.css?v=1.2.0" rel="stylesheet" />
+    <!--  CSS for Demo Purpose, don't include it in your project     
+    <link href="../assets/css/demo.css" rel="stylesheet" /> -->
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+
+<script src="../assets/js/jquery.min.js"> </script>
+<script> 
+$(function(){
+  $("#sidebarclass").load("sidebar.html"); 
+  $("#headerclass").load("header.html"); 
+  $("#footerclass").load("footer.html"); 
+  
+});
+</script> 
+
+<style>
+        * {box-sizing: border-box;}
+        
+        .image {
+          display: block;
+          width: 100%;
+          height: 20%;
+          margin-top:10px;
+        }        
+        </style>
+        
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="sidebarclass">		</div>
+        <div class="main-panel">
+            <div id="headerclass">	</div>
+            <div class="content" style="margin-top:30px;">
+                <div class="container-fluid" >
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="templateContent" class="content" style="margin-top:75px;">
+                               <center><h2 id="loading">Loading...</h2></center>
+                            </div>
+                        </div>
+
+                        <script id="eventTemplate" type="text/x-handlebars-template">
+                            <div class="card">
+                                <div class="card-header" data-background-color="purple">
+                                    <h3 class="title">{{blog.title}}</h3>
+                                    <!-- <p class="category">Add new Event</p> -->
+                                </div>
+                                <div class="row">
+                                        <h3 style="margin-left:90px;"><strong> Title : {{blog.title}}</strong> </h3> 
+                                        <img class="image" src="{{blog.featuredImage.image}}" alt="Alternate" style="width:88%;height:300px;margin-left:8%;">
+                                        <div class="caption">
+                                            <p style="float:left;margin-left:100px;">Date : {{blog.date}} </p><p style="float:right;margin-right:100px;">Author : {{ngo.name}}</p><br>                                            
+                                        </div>
+                                    </div>
+                                    {{#each blog.images}}
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <img src="{{image}}" style="height:200px;width:300px;margin-left:70px;"/>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <img src="{{image}}" style="height:200px;width:300px;margin-left:40px;"/>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <img src="{{image}}" style="height:200px;width:300px;margin-left:5px;"/>
+                                            </div>
+                                            
+                                        </div>
+                                    {{/each}}
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                             <div class="well" style="height:500px;width:950px;margin-left:70px;margin-top:10px;border-solid:1px;">
+                                                 <center>{{blog.body}}y</center>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </script>
+
+                    </div>
+                </div>
+            </div>
+            <div id="footerclass">
+			
+			</div>
+        </div>
+    </div>
+</body>
+<!--   Core JS Files   -->
+<script src="../assets/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../assets/js/material.min.js" type="text/javascript"></script>
+<!--  Charts Plugin -->
+<script src="../assets/js/chartist.min.js"></script>
+<!--  Dynamic Elements plugin -->
+<script src="../assets/js/arrive.min.js"></script>
+<!--  PerfectScrollbar Library -->
+<script src="../assets/js/perfect-scrollbar.jquery.min.js"></script>
+<!--  Notifications Plugin    -->
+<script src="../assets/js/bootstrap-notify.js"></script>
+<!--  Google Maps Plugin    -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<!-- Material Dashboard javascript methods -->
+<script src="../assets/js/material-dashboard.js?v=1.2.0"></script>
+<!-- Material Dashboard DEMO methods, don't include it in your project! -->
+<script src="../assets/js/demo.js"></script>
+
+
+<script src="../assets/js/bootstrap-datepicker.js" type="text/javascript"></script>
+<script src="../assets/js/material-kit.js" type="text/javascript"></script>
+<script src="/assets/js/handlebars-v4.0.11.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" type="text/javascript"></script>
+    
+  <script>  
+    function getParameterByName(name) {
+            var url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;                                                                                                                                                                                                  
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    $().ready(function(){
+      var blogId = getParameterByName('id');
+      console.log(blogId);
+
+      axios.get('/api/blog/'+blogId)
+        .then(function (blog) {
+                  var source   = document.getElementById('eventTemplate').innerHTML;
+                  var template = Handlebars.compile(source);
+                  $("#templateContent").html(template(
+                     {
+                        blog: blog.data.blog[0],
+                        ngo: blog.data
+                     }
+                  ));
+                  console.log(blog.data);
+
+        })
+        .catch(function (error) {
+          $("#loading").html('Invalid Id');
+          console.log(error);
+        }); 
+    });
+  </script>
+</html>
